@@ -46,7 +46,7 @@ Render deploys from a connected Git provider. Create a **private** GitHub reposi
 2. Set **Root Directory** to the repository root, **Build Command** to:
 
    ```text
-   npm ci --prefix backend && npm ci --prefix frontend && npm run build:frontend
+   npm ci --prefix backend && npm ci --include=dev --prefix frontend && npm run build:frontend
    ```
 
 3. Set **Start Command** to:
