@@ -66,12 +66,11 @@ Render deploys from a connected Git provider. Create a **private** GitHub reposi
    DB_PASSWORD=<TiDB password>
    DB_NAME=library_management
    DB_SSL=true
-   APP_DEMO_USER=<choose a demo username>
-   APP_DEMO_PASSWORD=<choose a long unique password>
+   PUBLIC_DEMO=true
    ```
 
    Add `PORT` only if Render asks; otherwise Render supplies it. Do not set `DB_SSL_CA` for Starter unless TiDB specifically tells you to use a CA certificate.
-6. Click **Create Web Service** and wait for the build to finish. Render will show the public `onrender.com` address. Open it; the browser will ask for the demo username and password.
+6. Click **Create Web Service** and wait for the build to finish. Render will show the public `onrender.com` address. With `PUBLIC_DEMO=true`, the website opens without the browser-level password prompt. Anyone with the link can use the demo and change its sample data.
 
 ## 5. Confirm the database connection
 

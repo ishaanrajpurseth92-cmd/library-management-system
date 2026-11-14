@@ -1,13 +1,16 @@
 const crypto = require('crypto');
 
 /**
- * Protect the public demo with HTTP Basic authentication.
- * Set APP_DEMO_USER and APP_DEMO_PASSWORD in the hosting provider's secret
- * environment settings. Local development remains open when NODE_ENV is not
- * production and no demo credentials are configured.
+ * Protect the public demo with HTTP Basic authentication by default.
+ * Set PUBLIC_DEMO=true to let anyone open and use the hosted demo directly.
+ * Otherwise set APP_DEMO_USER and APP_DEMO_PASSWORD in the hosting provider.
  */
 function requireDemoAuth(req, res, next) {
   if (req.path === '/api/health' || req.method === 'OPTIONS') {
+    return next();
+  }
+
+  if (process.env.PUBLIC_DEMO === 'true') {
     return next();
   }
 
