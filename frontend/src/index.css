@@ -322,6 +322,10 @@ input, select, textarea {
   border: 1px solid transparent;
 }
 
+.db-indicator-pill .db-text {
+  white-space: nowrap;
+}
+
 .db-indicator-pill.connected {
   background: var(--accent-green-light);
   color: var(--accent-green);
@@ -1012,10 +1016,14 @@ input, select, textarea {
 .table-responsive {
   width: 100%;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 .data-table {
   width: 100%;
+  min-width: 850px;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.9rem;
@@ -1736,6 +1744,10 @@ input, select, textarea {
 
   .libraree-header {
     padding: 18px 20px;
+  }
+
+  .auth-buttons-group {
+    display: none;
   }
 
   .libraree-card-body {
