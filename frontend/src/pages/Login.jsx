@@ -126,7 +126,7 @@ export default function Login({
         }, 800);
       }
     } catch (err) {
-      setError(err.message || 'Failed to create patron account in MySQL.');
+      setError(err.message || 'Failed to create patron account in the database.');
     } finally {
       setLoading(false);
     }
@@ -179,7 +179,7 @@ export default function Login({
           <p className="login-subtitle">
             {mode === 'signin' 
               ? 'Sign in to access circulation, loans, and library records' 
-              : 'Register as a library patron in MySQL 8.0'}
+              : 'Register as a library patron using TiDB Cloud'}
           </p>
         </div>
 

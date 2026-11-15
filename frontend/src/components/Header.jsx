@@ -74,14 +74,14 @@ export default function Header({
 
       {/* Right Actions */}
       <div className="header-actions">
-        {/* MySQL Status Pill */}
+        {/* Database Status Pill */}
         <div 
           className={`db-indicator-pill ${dbConnected ? 'connected' : 'disconnected'}`}
-          title={dbConnected ? 'Connected to MySQL 8.0' : 'MySQL Database unreachable'}
+          title={dbConnected ? 'Connected to TiDB Cloud' : 'TiDB Cloud database unreachable'}
         >
           <span className="db-dot" />
           <Database size={13} />
-          <span className="db-text">{dbConnected ? 'MySQL 8.0' : 'Offline'}</span>
+          <span className="db-text">{dbConnected ? 'TiDB Cloud' : 'Offline'}</span>
         </div>
 
         {/* 3D Scene Toggle */}

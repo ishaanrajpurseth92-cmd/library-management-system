@@ -1,7 +1,7 @@
 /* ==========================================================================
    LIBRAREE - 3D CLAYMORPHIC LIBRARY MANAGEMENT SYSTEM
    Warm Peach & Orange Aesthetic with 3D Desk Hero, Clean Rounded Panels,
-   and Real-time MySQL 8.0 Relational Management
+   and TiDB Cloud Database Management
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
@@ -2112,6 +2112,42 @@ input, select, textarea {
 .member-joined {
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+
+.member-loan-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 150px;
+}
+
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  white-space: nowrap;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.total-stat {
+  color: var(--text-sub);
+  background: var(--card-bg);
+}
+
+.active-stat {
+  color: #3B8E35;
+  background: #EAF7E6;
+}
+
+.overdue-stat {
+  color: #A73A2B;
+  background: #FDEBE7;
 }
 
 /* Reports Tabs & Charts */

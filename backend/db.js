@@ -62,7 +62,7 @@ async function testConnection() {
     const connection = await pool.getConnection();
     await connection.ping();
     connection.release();
-    return { ok: true, message: 'Connected to MySQL-compatible database successfully' };
+    return { ok: true, message: 'Connected to TiDB Cloud database successfully' };
   } catch (err) {
     return { ok: false, message: err.message, code: err.code };
   }

@@ -40,7 +40,7 @@ export default function Dashboard({
         setData(res.data);
       }
     } catch (err) {
-      setError(err.message || 'Failed to load dashboard metrics from MySQL.');
+      setError(err.message || 'Failed to load dashboard metrics from the database.');
     } finally {
       setLoading(false);
     }
@@ -76,7 +76,7 @@ export default function Dashboard({
         <div className="hero-text-column">
           <div className="hero-badge-pill">
             <span className="badge-glow-dot" />
-            <span>DBMS Relational Catalog • MySQL 8.0</span>
+            <span>DBMS Relational Catalog • TiDB Cloud</span>
           </div>
 
           <h1 className="hero-main-title">
@@ -194,14 +194,14 @@ export default function Dashboard({
           <div className="card-header-bar">
             <div className="card-header-left">
               <h2 className="card-heading">Recent Circulation Activity</h2>
-              <p className="card-subheading">Latest loans issued from MySQL database</p>
+              <p className="card-subheading">Latest loans issued from the library database</p>
             </div>
             <div className="card-header-actions">
               <button 
                 type="button" 
                 className="btn btn-secondary btn-sm"
                 onClick={loadDashboardData}
-                title="Refresh from MySQL"
+                title="Refresh from database"
                 disabled={loading}
               >
                 <RefreshCw size={14} className={loading ? 'animate-spin' : ''} />
@@ -234,7 +234,7 @@ export default function Dashboard({
                   <tr>
                     <td colSpan={5} className="table-loading-cell">
                       <RefreshCw size={20} className="animate-spin text-muted" />
-                      <span>Loading records from MySQL...</span>
+                      <span>Loading records from the database...</span>
                     </td>
                   </tr>
                 ) : data?.recent_loans?.length > 0 ? (
@@ -268,7 +268,7 @@ export default function Dashboard({
                 ) : (
                   <tr>
                     <td colSpan={5} className="table-empty-cell">
-                      No recent loans recorded in MySQL.
+                      No recent loans recorded in the database.
                     </td>
                   </tr>
                 )}

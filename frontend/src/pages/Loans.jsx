@@ -274,7 +274,7 @@ export default function Loans({ onShowToast }) {
         {loading && loans.length === 0 && (
           <div className="panel-loading">
             <RefreshCw size={24} className="spin text-brass" />
-            <p>Querying circulation transactions from MySQL...</p>
+            <p>Loading circulation records from the database...</p>
           </div>
         )}
 
@@ -559,7 +559,7 @@ export default function Loans({ onShowToast }) {
               className="btn btn-primary"
               disabled={formSubmitting}
             >
-              {formSubmitting ? 'Updating MySQL...' : 'Confirm Return'}
+              {formSubmitting ? 'Updating loan...' : 'Confirm Return'}
             </button>
           </div>
         </form>

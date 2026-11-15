@@ -94,10 +94,10 @@ app.listen(PORT, '0.0.0.0', async () => {
 
   const dbStatus = await testConnection();
   if (dbStatus.ok) {
-    console.log(`  ✓ Database: Connected to MySQL [${process.env.DB_NAME || 'library_management'}]`);
+    console.log(`  ✓ Database: Connected to TiDB Cloud [${process.env.DB_NAME || 'library_management'}]`);
   } else {
     console.warn(`  ⚠️ Database Warning: ${dbStatus.message}`);
-    console.warn(`  👉 Please ensure MySQL is running and execute 'npm run init-db'`);
+    console.warn(`  👉 Please check the database connection settings and execute 'npm run init-db'`);
   }
   console.log(`===========================================================\n`);
 });

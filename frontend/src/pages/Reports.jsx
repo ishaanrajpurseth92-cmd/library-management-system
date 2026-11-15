@@ -42,7 +42,7 @@ export default function Reports() {
       if (catRes.success) setCategories(catRes.data);
       if (memRes.success) setMemberStats(memRes.data);
     } catch (err) {
-      setError(err.message || 'Failed to aggregate library reports from MySQL.');
+      setError(err.message || 'Failed to load library reports from the database.');
     } finally {
       setLoading(false);
     }
@@ -111,7 +111,7 @@ export default function Reports() {
       {loading && (
         <div className="panel panel-loading">
           <RefreshCw size={28} className="spin text-brass" />
-          <p>Running relational aggregation queries in MySQL...</p>
+          <p>Preparing library reports from the database...</p>
         </div>
       )}
 

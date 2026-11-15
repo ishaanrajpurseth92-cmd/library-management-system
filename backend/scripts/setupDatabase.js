@@ -4,7 +4,7 @@ const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 async function setupDatabase() {
-  console.log('--- Initializing MySQL Database for 3D Library Management System ---');
+  console.log('--- Initializing TiDB Cloud Database for 3D Library Management System ---');
   
   const host = process.env.DB_HOST || 'localhost';
   const port = parseInt(process.env.DB_PORT || '3306', 10);
@@ -14,7 +14,7 @@ async function setupDatabase() {
   const sslCa = process.env.DB_SSL_CA?.replace(/\\n/g, '\n');
   const sslEnabled = process.env.DB_SSL === 'true' || Boolean(sslCa);
 
-  console.log(`Connecting to MySQL at ${host}:${port} as user '${user}'...`);
+  console.log(`Connecting to TiDB Cloud database at ${host}:${port} as user '${user}'...`);
 
   let connection;
   try {
@@ -28,7 +28,7 @@ async function setupDatabase() {
       ...(sslEnabled ? { ssl: { minVersion: 'TLSv1.2', ...(sslCa ? { ca: sslCa } : {}) } } : {})
     });
 
-    console.log('✓ Successfully connected to MySQL server.');
+    console.log('✓ Successfully connected to TiDB Cloud.');
 
     // Ensure database exists
     await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;`);
@@ -78,7 +78,7 @@ async function setupDatabase() {
     console.error('\n✗ Error during database setup:');
     console.error(error.message);
     if (error.code === 'ECONNREFUSED') {
-      console.error('Hint: Make sure MySQL server is running on ' + host + ':' + port);
+      console.error('Hint: Check the database host, port, and network access settings for ' + host + ':' + port);
     } else if (error.code === 'ER_ACCESS_DENIED_ERROR') {
       console.error('Hint: Check DB_USER and DB_PASSWORD in backend/.env');
     }

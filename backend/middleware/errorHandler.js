@@ -1,6 +1,6 @@
 /**
  * Global Error Handler Middleware
- * Parses MySQL and application errors into user-friendly JSON responses
+ * Parses database and application errors into user-friendly JSON responses
  */
 function errorHandler(err, req, res, next) {
   console.error('[Error Details]:', {
@@ -15,7 +15,7 @@ function errorHandler(err, req, res, next) {
   let statusCode = err.status || 500;
   let userMessage = 'An unexpected server error occurred.';
 
-  // Handle MySQL errors
+  // Handle database driver errors
   if (err.code) {
     switch (err.code) {
       case 'ER_DUP_ENTRY':
@@ -60,7 +60,7 @@ function errorHandler(err, req, res, next) {
 
       case 'ECONNREFUSED':
         statusCode = 503;
-        userMessage = 'Unable to connect to MySQL database server. Please verify MySQL is running.';
+        userMessage = 'Unable to connect to the database. Please verify the database connection settings.';
         break;
 
       default:

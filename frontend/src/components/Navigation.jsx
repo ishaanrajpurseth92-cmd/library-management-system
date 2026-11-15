@@ -45,7 +45,7 @@ export default function Navigation({
           </div>
           <div className="brand-text">
             <h1 className="brand-title">Library Management</h1>
-            <span className="brand-subtitle">DBMS Project • MySQL 8.0</span>
+            <span className="brand-subtitle">DBMS Project • TiDB Cloud</span>
           </div>
           <button 
             type="button"
@@ -60,7 +60,7 @@ export default function Navigation({
         <div className="sidebar-badge-wrap">
           <span className="system-pill">
             <Database size={12} />
-            MySQL 8.0 • InnoDB Engine
+            TiDB Cloud Database
           </span>
         </div>
 

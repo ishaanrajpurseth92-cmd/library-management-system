@@ -254,7 +254,7 @@ export default function Books({ onShowToast, initialSearch = '' }) {
       });
 
       if (res.success) {
-        onShowToast({ type: 'success', message: 'New book created successfully in MySQL!' });
+        onShowToast({ type: 'success', message: 'New book created successfully!' });
         setIsAddModalOpen(false);
         loadBooks();
       }
@@ -438,7 +438,7 @@ export default function Books({ onShowToast, initialSearch = '' }) {
         {loading && books.length === 0 && (
           <div className="panel-loading">
             <RefreshCw size={24} className="spin text-brass" />
-            <p>Querying catalogue records from MySQL...</p>
+            <p>Loading catalogue records from the database...</p>
           </div>
         )}
 
@@ -758,7 +758,7 @@ export default function Books({ onShowToast, initialSearch = '' }) {
               className="btn btn-primary"
               disabled={formSubmitting}
             >
-              {formSubmitting ? 'Writing to MySQL...' : 'Create Book'}
+          {formSubmitting ? 'Saving book...' : 'Create Book'}
             </button>
           </div>
         </form>
@@ -1032,7 +1032,7 @@ export default function Books({ onShowToast, initialSearch = '' }) {
             You are about to delete <strong>{currentBook?.title}</strong> (ISBN: {currentBook?.isbn}) from the database.
           </p>
           <p className="confirm-subtext">
-            Note: MySQL foreign key rules will prevent deletion if this book has any active or historical loan records.
+            Note: Database relationship rules prevent deletion if this book has active or historical loan records.
           </p>
           <div className="modal-actions">
             <button 

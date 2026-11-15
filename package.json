@@ -1,7 +1,7 @@
 {
   "name": "athenaeum-3d-library-system",
   "version": "1.0.0",
-  "description": "Interactive 3D Library Management System with React, Three.js, Node.js, and MySQL",
+  "description": "Interactive 3D Library Management System with React, Three.js, Node.js, and TiDB Cloud",
   "scripts": {
     "init-db": "npm --prefix backend run init-db",
     "backend": "npm --prefix backend start",

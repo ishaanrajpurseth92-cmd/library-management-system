@@ -283,7 +283,7 @@ export default function Members({ onShowToast }) {
         {loading && members.length === 0 && (
           <div className="panel-loading">
             <RefreshCw size={24} className="spin text-brass" />
-            <p>Retrieving library patron roster from MySQL...</p>
+            <p>Loading the library member list...</p>
           </div>
         )}
 
@@ -619,7 +619,7 @@ export default function Members({ onShowToast }) {
           {historyLoading ? (
             <div className="panel-loading">
               <RefreshCw size={24} className="spin text-brass" />
-              <p>Fetching borrowing records from MySQL...</p>
+            <p>Loading borrowing records from the database...</p>
             </div>
           ) : (
             <>
@@ -702,7 +702,7 @@ export default function Members({ onShowToast }) {
             Are you sure you want to delete <strong>{selectedMember?.full_name}</strong>?
           </p>
           <p className="confirm-subtext">
-            If this member has active or past loan records, MySQL foreign key constraints and audit policies will safely block this deletion.
+            If this member has active or past loan records, database relationship rules will prevent deletion.
           </p>
           <div className="modal-actions">
             <button 
